@@ -97,7 +97,7 @@ public class ToDo {
         return "ToDo{" +
                 "Nome='" + name + '\'' +
                 ", Descrição='" + description + '\'' +
-                ", Data=" + endDate +
+                ", Data Final=" + endDate +
                 ", Prioridade=" + priorityLevel +
                 ", Categoria='" + category + '\'' +
                 ", Status='" + status + '\'' +
