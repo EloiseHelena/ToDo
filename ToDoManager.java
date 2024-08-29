@@ -34,7 +34,7 @@ public class ToDoManager {
         }
     }
 
-    public List<ToDo> listTasks() {
+    public List<ToDo> listToDos() {
         return new ArrayList<>(toDos);
     }
 
