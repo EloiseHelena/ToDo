@@ -56,6 +56,20 @@ function editTask(index) {
   tasks.splice(index, 1);
 }
 
+document.getElementById('change-status').addEventListener('click', function() {
+  const selectedStatus = document.getElementById('multi-task-status').value;
+  const checkboxes = document.querySelectorAll('.task-select:checked');
+
+  checkboxes.forEach(checkbox => {
+    const taskIndex = checkbox.getAttribute('data-index');
+    tasks[taskIndex].status = selectedStatus;
+  });
+
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  renderTasks();
+});
+
+
 renderTasks();
 
 
