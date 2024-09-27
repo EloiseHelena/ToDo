@@ -11,6 +11,7 @@ function renderTasks(tasksToRender = tasks) {
   tasksToRender.forEach((task, index) => {
     const li = document.createElement('li');
     li.innerHTML = `
+      <input type="checkbox" class="task-select" data-index="${index}">
       <strong>${task.name}</strong> - ${task.description} <br>
       Prioridade: ${task.priority} | Categoria: ${task.category} | Status: ${task.status}
       <button onclick="editTask(${index})">Editar</button>
@@ -19,6 +20,7 @@ function renderTasks(tasksToRender = tasks) {
     taskList.appendChild(li);
   });
 }
+
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
