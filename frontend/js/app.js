@@ -43,4 +43,17 @@ function deleteTask(index) {
   renderTasks();
 }
 
+function editTask(index) {
+  const task = tasks[index];
+  document.getElementById('task-name').value = task.name;
+  document.getElementById('task-desc').value = task.description;
+  document.getElementById('task-priority').value = task.priority;
+  document.getElementById('task-category').value = task.category;
+  document.getElementById('task-status').value = task.status;
+
+  tasks.splice(index, 1);
+}
+
+renderTasks();
+
 
