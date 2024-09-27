@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+</head>
+
+<body>
+<h1>ToDo List</h1>
+
+<div class="container">
+    <section class="task-form">
+        <h2>Adicionar/Editar Tarefa</h2>
+        <form id="task-form">
+            <input type="hidden" id="task-id">
+            <label for="task-name">Nome:</label>
+            <input type="text" id="task-name" required>
+
+            <label for="task-desc">Descrição:</label>
+            <input type="text" id="task-desc" required>
+
+            <label for="task-priority">Prioridade:</label>
+            <input type="number" id="task-priority" min="1" required>
+
+            <label for="task-category">Categoria:</label>
+            <input type="text" id="task-category" required>
+
+            <label for="task-status">Status:</label>
+            <select id="task-status">
+                <option value="TODO">TODO</option>
+                <option value="DOING">DOING</option>
+                <option value="DONE">DONE</option>
+            </select>
+
+            <button type="submit">Salvar Tarefa</button>
+        </form>
+    </section>
+
+
+    <section class="task-list">
+        <h2>Tarefas</h2>
+        <div class="filters">
+            <input type="text" id="filter-category" placeholder="Filtrar por categoria">
+            <input type="text" id="filter-priority" placeholder="Filtrar por prioridade">
+            <select id="filter-status">
+                <option value="">Todos os Status</option>
+                <option value="TODO">TODO</option>
+                <option value="DOING">DOING</option>
+                <option value="DONE">DONE</option>
+            </select>
+            <button id="filter-tasks" >Filtrar</button>
+        </div>
+
+        <ul id="task-list">
+
+        </ul>
+
+        <section class="task-status">
+            <h2>Alterar Status das Tarefas Selecionadas</h2>
+            <select id="multi-task-status">
+                <option value="TODO">TODO</option>
+                <option value="DOING">DOING</option>
+                <option value="DONE">DONE</option>
+            </select>
+            <button id="change-status">Alterar Status</button>
+        </section>
+    </section>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
