@@ -24,6 +24,7 @@ function renderTasks(tasksToRender = tasks) {
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
+  console.log("Formulário foi submetido!");
 
   const task = {
     name: document.getElementById('task-name').value,
@@ -68,6 +69,23 @@ document.getElementById('change-status').addEventListener('click', function() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
   renderTasks();
 });
+
+document.getElementById('filter-tasks').addEventListener('click', function() {
+  const selectedCategory = filterCategory.value.toLowerCase();
+  const selectedPriority = filterPriority.value;
+  const selectedStatus = filterStatus.value;
+
+  const filteredTasks = tasks.filter(task => {
+    const matchCategory = selectedCategory === '' || task.category.toLowerCase().includes(selectedCategory);
+    const matchPriority = selectedPriority === '' || task.priority == selectedPriority;
+    const matchStatus = selectedStatus === '' || task.status === selectedStatus;
+
+    return matchCategory && matchPriority && matchStatus;
+  });
+
+  renderTasks(filteredTasks);
+});
+
 
 
 renderTasks();
