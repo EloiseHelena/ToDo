@@ -37,3 +37,10 @@ form.addEventListener('submit', function(e) {
   form.reset();
 });
 
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  renderTasks();
+}
+
+
